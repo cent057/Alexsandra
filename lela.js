@@ -15,3 +15,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 <d1>hello world</d1>
+// Пример анимации при клике на элементе
+
+const element = document.querySelector('.animate-me');
+
+// Функция запуска анимации
+function startAnimation(event) {
+  // Ваш код анимации здесь
+  console.log('Анимация началась!');
+}
+
+// Добавляем событие для настольных устройств
+element.addEventListener('mousedown', startAnimation);
+
+// Добавляем событие для сенсорных устройств
+element.addEventListener('touchstart', function(event) {
+  // Предотвращаем срабатывание дополнительного события мыши
+  event.preventDefault();
+  startAnimation(event);
+});
